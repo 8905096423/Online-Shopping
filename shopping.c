@@ -76,19 +76,19 @@ int main()
     printf("Hello...Welcome to Our Online Shopping\n\n");
     for(;;)
     {
-    printf("Enter\n1:Create account\n2:Login\n3.Exit\n");
-     for(;;)
-    {
+      printf("Enter\n1:Create account\n2:Login\n3.Exit\n");
+      for(;;)
+      {
         fscanf(fp,"%s%s%ld%ld",account[i].name,account[i].adress,&account[i].phone,&account[i].pincode);
         if(feof(fp))
         {   
             break;
         }
-      i++;
-    }
-    scanf("%d",&ch);
-    switch(ch)
-    {
+        i++;
+      }
+      scanf("%d",&ch);
+      switch(ch)
+      {
         case 1:printf("Enter your name\n");
                scanf("%s",name);
                printf("Enter address\n");
@@ -195,7 +195,7 @@ int main()
                     
                          switch(ch)
                          {
-                           case 1:printf("\n");
+                          case 1:printf("\n");
                                   Rate=saree();
                                   dis=10;
                                   printf("ENTER\n1:to buy Saree\n2:to Add to Cart\n");
@@ -266,16 +266,16 @@ int main()
                                  }
                                  break;
                            
-                         case 4:printf("\n");
-                                Rate=dress();
-                                dis=15;
-                                printf("ENTER\n1:to buy Dress\n2:to Add to Cart\n");
-                                scanf("%d",&choice);
-                                printf("Select size\n");
-                                printf("S   M   L   XL   2XL\n");
-                                scanf("%s",size);
-                                switch(choice)
-                                {
+                          case 4:printf("\n");
+                                 Rate=dress();
+                                 dis=15;
+                                 printf("ENTER\n1:to buy Dress\n2:to Add to Cart\n");
+                                 scanf("%d",&choice);
+                                 printf("Select size\n");
+                                 printf("S   M   L   XL   2XL\n");
+                                 scanf("%s",size);
+                                 switch(choice)
+                                 {
                                   case 1:q=(((float)dis)/100)*Rate;
                                          buy(Rate,1,2,q);
                                          break;
@@ -289,12 +289,12 @@ int main()
                                            
                                            fprintf(gp,"%ld %s %d %d ",cart2.phone,cart2.item,cart2.rate,cart2.discou);
                                          break;
-                                }
+                                 }
                                 break;
                             
-                         case 5:printf("\n");
-                                printf("Sorry,no result found!!!\nPlease check the spelling or try searching for something else....\n ");
-                                break;
+                          case 5:printf("\n");
+                                 printf("Sorry,no result found!!!\nPlease check the spelling or try searching for something else....\n ");
+                                 break;
                            
                          default:printf("\n");
                                  printf("Are you sure want to exit?\nEnter:\n1 to exit\n2 to continue \n");
@@ -326,6 +326,7 @@ int main()
     }
 }
 }
+
 int choose(char search_pro[])
 { 
     char S[4][6]={"Saree","saree","sari","Sari"};
@@ -393,8 +394,6 @@ void add_to_cart(int Rate,int dis)
         cnt++;
         product.cr=product.cr->link;
      }
-     
-   
      printf("Your product is added to cart...\n");
 }
 
@@ -416,8 +415,7 @@ void buy_cart()
          total_price= total_price+cart3[t].rate;
          
      }
-      
-      buy((total_price+price),(cnt+f),3,(Discount+Discoun));
+    buy((total_price+price),(cnt+f),3,(Discount+Discoun));
 }
 
 void buy(int Rate,int item_no,int st,int Discount)
@@ -727,7 +725,6 @@ int saree()
                }  
                break;
     }
-    
 }
 
 int Shoes()
